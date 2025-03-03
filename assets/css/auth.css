@@ -1,0 +1,106 @@
+/* Center the BigBounty logo */
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+}
+.auth-container {
+     min-height: 100vh;
+     background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+ }
+ 
+ .auth-form-container {
+     max-width: 480px;
+     margin: 0 auto;
+     padding: 2rem;
+ }
+ 
+ .auth-welcome {
+     animation: fadeInUp 0.6s ease-out;
+ }
+ 
+ .auth-form {
+     animation: fadeInUp 0.6s ease-out 0.2s backwards;
+ }
+ 
+ .social-login {
+     animation: fadeInUp 0.6s ease-out 0.1s backwards;
+ }
+ 
+ /* Styling for the image */
+.auth-image {
+    max-width: 80%;
+    height: auto;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Center the image inside the container */
+.character-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+ .floating {
+     animation: float 6s ease-in-out infinite;
+ }
+ 
+ /* Divider Styling - Clean and Modern */
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #ccc;
+    margin: 0 10px;
+}
+
+.divider span {
+    font-size: 0.9rem;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+ 
+ /* Form Styling */
+ .form-floating > .form-control:focus ~ label,
+ .form-floating > .form-control:not(:placeholder-shown) ~ label {
+     color: var(--primary-color);
+ }
+ 
+ .form-control:focus {
+     border-color: var(--primary-color);
+     box-shadow: 0 0 0 0.25rem rgba(79, 70, 229, 0.25);
+ }
+ 
+ .form-check-input:checked {
+     background-color: var(--primary-color);
+     border-color: var(--primary-color);
+ }
+ 
+ /* Responsive */
+ @media (max-width: 991.98px) {
+     .auth-form-container {
+         padding: 1.5rem;
+     }
+     
+     .character-container {
+         height: 300px;
+         margin-bottom: 1rem;
+     }
+ }
+ 
+ @media (max-width: 767.98px) {
+     .character-container {
+         height: 250px;
+     }
+ }
