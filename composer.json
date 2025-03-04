@@ -1,0 +1,17 @@
+{
+    "name": "kumar/bigger-bounty",
+    "require": {
+        "google/apiclient": "^2.18"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kumar\\BiggerBounty\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Raj Chaudhary",
+            "email": "kumarrajuchadhary73@gmail.com"
+        }
+    ]
+}
