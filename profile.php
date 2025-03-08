@@ -1,3 +1,36 @@
+<?php
+session_start();
+require 'config/db.php'; // Database connection
+
+//  Redirect if user is not logged in
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit();
+}
+
+$user_id = $_SESSION['user_id'];
+
+//  Fetch user data from the database
+$sql = "SELECT * FROM users WHERE user_id = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $user_id);
+$stmt->execute();
+$result = $stmt->get_result();
+$user = $result->fetch_assoc();
+
+//  If user data not found, redirect to login
+if (!$user) {
+    header("Location: login.php");
+    exit();
+}
+
+// Format join date
+$join_date = date("M Y", strtotime($user['created_at']));
+
+//  Set profile picture (if exists, else use default)
+$userImage = !empty($user['profile_pic']) ? htmlspecialchars($user['profile_pic']) : "assets/images/default-avatar.png";
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,36 +51,32 @@
             <div class="profile-info">
                 <div class="profile-avatar-container">
                     <div class="profile-avatar">
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&h=150&q=80" 
-                             alt="John Developer">
+                        <img src="<?= htmlspecialchars($user['profile_image'] ?? 'default.png'); ?>" 
+                             alt="Profile image">
                     </div>
-                    <button class="avatar-edit-btn" data-bs-toggle="modal" data-bs-target="#editProfileModal">
-                        <i class="bi bi-pencil-fill"></i>
-                    </button>
                 </div>
                 <div class="profile-details">
                     <div class="d-flex align-items-center justify-content-between">
                         <h1>
-                            John Developer
-                            <i class="bi bi-patch-check-fill verified-badge"></i>
+                        <?= htmlspecialchars($user['full_name']); ?>
                         </h1>
                         <button class="btn btn-outline-primary btn-sm d-none d-md-flex edit-profile-btn" data-bs-toggle="modal" data-bs-target="#editProfileModal">
                             <i class="bi bi-pencil me-2"></i>Edit Profile
                         </button>
                     </div>
-                    <p class="profile-title">Senior Full Stack Developer</p>
+                    <p class="profile-title"><?= htmlspecialchars($user['job_title'] ?? 'Member'); ?></p>
                     <div class="profile-meta">
                         <div class="meta-item">
-                            <i class="bi bi-geo-alt"></i>
-                            <span>Mumbai, India</span>
+                            <i class="bi bi-telephone"></i>
+                            <span><?= htmlspecialchars($user['phone_no'] ?? 'Not specified'); ?></span>
                         </div>
                         <div class="meta-item">
                             <i class="bi bi-clock"></i>
-                            <span>Member since Jan 2023</span>
+                            <span>Member since <?= $join_date; ?></span>
                         </div>
                         <div class="meta-item">
-                            <i class="bi bi-translate"></i>
-                            <span>English, Hindi</span>
+                            <i class="bi bi-envelope-at"></i>
+                            <span><?= htmlspecialchars($user['email'] ?? 'Not specified'); ?></span>
                         </div>
                     </div>
                     <button class="btn btn-outline-primary btn-sm d-md-none mt-3 w-100 edit-profile-btn-mobile" data-bs-toggle="modal" data-bs-target="#editProfileModal">
@@ -57,6 +86,7 @@
             </div>
         </div>
     </div>
+
 
     <div class="profile-container">
         <div class="profile-content">
@@ -224,7 +254,7 @@
                         <div class="bounties-section">
                             <div class="section-header">
                                 <h2>Bounties Posted</h2>
-                                <a href="create-bounty.html" class="btn btn-primary btn-sm">
+                                <a href="create-bounty.php" class="btn btn-primary btn-sm">
                                     <i class="bi bi-plus-lg"></i> Post New
                                 </a>
                             </div>

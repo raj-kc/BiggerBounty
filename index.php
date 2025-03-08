@@ -15,57 +15,52 @@
 
 <body>
 
+     <?php session_start();?>
      <!-- include header.php -->
 
      <?php include 'partials/header.php'?>
 
-     <!-- Hero Section -->
-     <section class="hero-section">
-          <div class="container">
-               <div class="row align-items-center">
-                    <div class="col-lg-6">
-                         <h1 class="display-4 fw-bold mb-4 animate-up">Find Your Next
-                              <span class="text-primary">Bounty</span> Opportunity
-                         </h1>
-                         <p class="lead mb-4 animate-up delay-1">Join thousands of developers earning rewards for their
-                              skills</p>
-                         <div class="search-box p-3 bg-white rounded-4 shadow animate-up delay-2">
-                              <div class="row g-2">
-                                   <div class="col-md-5">
-                                        <div class="input-group">
-                                             <span class="input-group-text bg-transparent border-0">
-                                                  <i class="bi bi-search"></i>
-                                             </span>
-                                             <input type="text" class="form-control border-0"
-                                                  placeholder="Search bounties...">
-                                        </div>
-                                   </div>
-                                   <div class="col-md-5">
-                                        <div class="input-group">
-                                             <span class="input-group-text bg-transparent border-0">
-                                                  <i class="bi bi-geo-alt"></i>
-                                             </span>
-                                             <select class="form-select border-0">
-                                                  <option>All Categories</option>
-                                                  <option>Smart Contracts</option>
-                                                  <option>Frontend</option>
-                                                  <option>Backend</option>
-                                             </select>
-                                        </div>
-                                   </div>
-                                   <div class="col-md-2">
-                                        <button class="btn btn-primary w-100">Search</button>
-                                   </div>
-                              </div>
-                         </div>
+     <!-- Hero Section --><section class="hero-section d-flex align-items-center justify-content-center">
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-8">
+                <h1 class="display-4 fw-bold mb-4 animate-up">Find Your Next
+                    <span class="text-primary">Bounty</span> Opportunity
+                </h1>
+                <p class="lead mb-4 animate-up delay-1">Join thousands of developers earning rewards for their
+                    skills</p>
+                <div class="search-box p-3 bg-white rounded-4 shadow animate-up delay-2">
+                    <div class="row g-2">
+                        <div class="col-md-5">
+                            <div class="input-group">
+                                <span class="input-group-text bg-transparent border-0">
+                                    <i class="bi bi-search"></i>
+                                </span>
+                                <input type="text" class="form-control border-0" placeholder="Search bounties...">
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="input-group">
+                                <span class="input-group-text bg-transparent border-0">
+                                    <i class="bi bi-geo-alt"></i>
+                                </span>
+                                <select class="form-select border-0">
+                                    <option>All Categories</option>
+                                    <option>Smart Contracts</option>
+                                    <option>Frontend</option>
+                                    <option>Backend</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <button class="btn btn-primary w-100">Search</button>
+                        </div>
                     </div>
-                    <div class="col-lg-6 d-none d-lg-block">
-                         <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80"
-                              alt="Developers working" class="img-fluid rounded-4 animate-up delay-3">
-                    </div>
-               </div>
-          </div>
-     </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 
      <!-- Stats Section -->

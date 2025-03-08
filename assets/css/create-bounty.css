@@ -1,0 +1,445 @@
+/* Create Bounty Page Styles */
+.create-bounty-page {
+     background-color: #f8f9fa;
+ }
+ 
+ /* Progress Steps */
+ .progress-steps {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     position: relative;
+     margin-bottom: 3rem;
+     padding: 0 1rem;
+ }
+ 
+ .progress-steps::before {
+     content: '';
+     position: absolute;
+     top: 50%;
+     left: 0;
+     right: 0;
+     height: 2px;
+     background: #e9ecef;
+     transform: translateY(-50%);
+     z-index: 1;
+ }
+ 
+ .step {
+     position: relative;
+     z-index: 2;
+     padding: 0 1rem;
+     text-align: center;
+     flex: 1;
+     max-width: 150px;
+ }
+ 
+ .step-icon {
+     width: 40px;
+     height: 40px;
+     background: #e9ecef;
+     border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin: 0 auto 0.5rem;
+     color: #6c757d;
+     transition: all 0.3s ease;
+ }
+ 
+ 
+ .step.completed .step-icon {
+     background: #28a745;
+     color: white;
+ }
+ 
+ .step-label {
+     font-size: 0.875rem;
+     color: #6c757d;
+     transition: all 0.3s ease;
+     white-space: nowrap;
+     overflow: hidden;
+     text-overflow: ellipsis;
+ }
+ 
+ .step.active .step-label {
+     color: var(--primary);
+     font-weight: 500;
+ }
+ 
+ .step.completed .step-label {
+     color: #28a745;
+     font-weight: 500;
+ }
+ 
+ /* Form Sections */
+ .form-step {
+     display: none;
+ }
+ 
+ .form-step.active {
+     display: block;
+     animation: fadeIn 0.5s ease-out;
+ }
+ 
+ /* Custom Form Styles */
+ 
+ 
+ .form-label {
+     font-weight: 500;
+     margin-bottom: 0.5rem;
+ }
+ 
+ /* File Upload Area */
+ .file-upload-container {
+     border: 2px dashed #dee2e6;
+     border-radius: 0.5rem;
+     padding: 2rem;
+     text-align: center;
+     transition: all 0.3s ease;
+ }
+ 
+ .file-upload-area {
+     cursor: pointer;
+ }
+ 
+ /* .file-upload-area:hover {
+     background: rgba(var(--primary-rgb), 0.05);
+ }
+ 
+ .file-upload-area.dragover {
+     background: rgba(var(--primary-rgb), 0.1);
+     border-color: var(--primary);
+ } */
+ 
+ /* Custom Radio Cards */
+ .payment-type-card {
+     border: 1px solid #dee2e6;
+     border-radius: 0.5rem;
+     padding: 1rem;
+     margin-bottom: 1rem;
+     cursor: pointer;
+     transition: all 0.3s ease;
+ }
+ 
+ .payment-type-card:hover {
+     background: rgba(var(--primary-rgb), 0.05);
+ }
+ 
+ .payment-type-card .form-check-input:checked ~ .form-check-label {
+     color: var(--primary);
+ }
+ 
+ .payment-type-card.active {
+     border-color: var(--primary);
+     background: rgba(var(--primary-rgb), 0.1);
+ }
+ 
+ /* Review Section */
+ .review-section {
+     background: #f8f9fa;
+     border-radius: 0.5rem;
+     padding: 1.5rem;
+     margin-bottom: 1.5rem;
+ }
+ 
+ .review-section-title {
+     color: var(--primary);
+     font-size: 1.1rem;
+     margin-bottom: 1rem;
+ }
+ 
+ .review-item {
+     display: flex;
+     margin-bottom: 0.75rem;
+ }
+ 
+ .review-label {
+     font-weight: 500;
+     width: 150px;
+     color: #6c757d;
+ }
+ 
+ .review-value {
+     flex: 1;
+ }
+ 
+ /* Navigation Buttons */
+ .form-navigation {
+     display: flex;
+     justify-content: space-between;
+     margin-top: 2rem;
+ }
+ 
+ .btn-prev, .btn-next, .btn-submit {
+     min-width: 120px;
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+ }
+ 
+ /* Tag Input Styles */
+ .tag-input-container {
+     position: relative;
+ }
+ 
+ .tag-suggestions {
+     position: absolute;
+     top: 100%;
+     left: 0;
+     right: 0;
+     background: white;
+     border: 1px solid #dee2e6;
+     border-radius: 0.5rem;
+     max-height: 200px;
+     overflow-y: auto;
+     z-index: 1000;
+     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+ }
+ 
+ .tag-suggestion-item {
+     padding: 0.5rem 1rem;
+     cursor: pointer;
+     transition: all 0.2s ease;
+ }
+ 
+ .tag-suggestion-item:hover {
+     background: #f8f9fa;
+ }
+ 
+ .tag-suggestion-item.active {
+     background: var(--primary-light);
+     color: var(--primary);
+ }
+ 
+ /* Payment Section Styles */
+ .winner-selection {
+     margin-bottom: 2rem;
+ }
+ 
+ .winner-distribution {
+     background: #f8f9fa;
+     border-radius: 0.5rem;
+     padding: 1.5rem;
+     margin-top: 1rem;
+ }
+ 
+ .winner-row {
+     display: flex;
+     align-items: center;
+     gap: 1rem;
+     margin-bottom: 1rem;
+ }
+ 
+ .winner-rank {
+     font-weight: 500;
+     min-width: 80px;
+ }
+ 
+ .winner-percentage {
+     flex: 1;
+ }
+ 
+ .total-distribution {
+     margin-top: 1rem;
+     padding-top: 1rem;
+     border-top: 1px solid #dee2e6;
+ }
+ 
+ .payment-method-card {
+     border: 1px solid #dee2e6;
+     border-radius: 0.5rem;
+     padding: 1rem;
+     margin-bottom: 1rem;
+     cursor: pointer;
+     transition: all 0.3s ease;
+ }
+ 
+
+ 
+ .payment-method-card.active {
+     border-color: var(--primary);
+     background: var(--primary-light);
+ }
+ 
+ .wallet-balance {
+     background: linear-gradient(45deg, #4f46e5, #6366f1);
+     color: white;
+     border-radius: 0.5rem;
+     padding: 1.5rem;
+     margin-bottom: 1.5rem;
+ }
+ 
+ .wallet-balance-amount {
+     font-size: 2rem;
+     font-weight: 600;
+     margin-bottom: 0.5rem;
+ }
+ 
+ .wallet-balance-label {
+     opacity: 0.9;
+     font-size: 0.875rem;
+ }
+ 
+ /* Animations */
+ @keyframes fadeIn {
+     from { opacity: 0; transform: translateY(10px); }
+     to { opacity: 1; transform: translateY(0); }
+ }
+ 
+ /* Responsive Adjustments */
+ @media (max-width: 768px) {
+     .progress-steps {
+         padding: 0 0.5rem;
+     }
+ 
+     .step {
+         padding: 0 0.5rem;
+     }
+ 
+     .step-icon {
+         width: 32px;
+         height: 32px;
+         font-size: 0.875rem;
+     }
+ 
+     .step-label {
+         font-size: 0.75rem;
+     }
+ 
+     .winner-row {
+         flex-direction: column;
+         align-items: stretch;
+         gap: 0.5rem;
+     }
+ 
+     .winner-rank {
+         min-width: auto;
+     }
+ 
+     .review-item {
+         flex-direction: column;
+     }
+ 
+     .review-label {
+         width: 100%;
+         margin-bottom: 0.25rem;
+     }
+ 
+     .form-navigation {
+         flex-direction: column;
+         gap: 1rem;
+     }
+ 
+     .btn-prev, .btn-next, .btn-submit {
+         width: 100%;
+     }
+ }
+ 
+ /* Requirements Editor */
+ .requirements-editor {
+     background: #f8f9fa;
+     border-radius: 0.5rem;
+     padding: 1.5rem;
+ }
+ 
+ .requirement-item {
+     margin-bottom: 1rem;
+ }
+ 
+ /* Skills Selector */
+ .skills-selector {
+     background: #f8f9fa;
+     border-radius: 0.5rem;
+     padding: 1.5rem;
+ }
+ 
+ .selected-skills {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 0.5rem;
+ }
+ 
+ /* Help Card */
+ .help-card {
+     background: #fff3cd;
+     border: none;
+     border-radius: 0.5rem;
+ }
+ 
+ .help-card .card-title {
+     color: #664d03;
+ }
+ 
+ .help-card ul {
+     color: #664d03;
+ }
+ 
+ /* Custom Checkboxes and Radios */
+ .form-check-input:checked {
+     background-color: var(--primary);
+     border-color: var(--primary);
+ }
+ 
+ .form-check-input:focus {
+     border-color: var(--primary);
+     box-shadow: 0 0 0 0.25rem rgba(var(--primary-rgb), 0.25);
+ }
+ 
+ /* Timeline Inputs */
+ .timeline-inputs {
+     display: flex;
+     gap: 1rem;
+ }
+ 
+ .timeline-input {
+     flex: 1;
+ }
+ 
+ /* Error States */
+ .is-invalid {
+     border-color: #dc3545;
+ }
+ 
+ .invalid-feedback {
+     color: #dc3545;
+     font-size: 0.875rem;
+     margin-top: 0.25rem;
+ }
+ 
+ /* Success States */
+ .is-valid {
+     border-color: #198754;
+ }
+ 
+ .valid-feedback {
+     color: #198754;
+     font-size: 0.875rem;
+     margin-top: 0.25rem;
+ }
+ 
+ /* Loading States */
+ .loading {
+     opacity: 0.7;
+     pointer-events: none;
+     position: relative;
+ }
+ 
+ .loading::after {
+     content: '';
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     width: 1.5rem;
+     height: 1.5rem;
+     border: 2px solid #f3f3f3;
+     border-top: 2px solid var(--primary);
+     border-radius: 50%;
+     animation: spin 1s linear infinite;
+     transform: translate(-50%, -50%);
+ }
+ 
+ @keyframes spin {
+     0% { transform: translate(-50%, -50%) rotate(0deg); }
+     100% { transform: translate(-50%, -50%) rotate(360deg); }
+ }

@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 $isLoggedIn = isset($_SESSION['full_name']);
 $userImage = $_SESSION['profile_pic'] ?? './assets/images/default-avtar.png';
 ?>
@@ -8,7 +8,7 @@ $userImage = $_SESSION['profile_pic'] ?? './assets/images/default-avtar.png';
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
         <div class="container">
-            <a class="navbar-brand logo" href="#">
+            <a class="navbar-brand logo" href="index.php">
                 <h1>BigBounty</h1>
             </a>
             <!-- Profile Picture Toggle for Mobile Drawer -->
@@ -45,7 +45,7 @@ $userImage = $_SESSION['profile_pic'] ?? './assets/images/default-avtar.png';
                             </button>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
                                 <li><a class="dropdown-item" href="profile.php"><i class="fas fa-user me-2"></i>Profile</a></li>
-                                <li><a class="dropdown-item" href="post_bounty.php"><i class="fas fa-plus-circle me-2"></i>Post Bounty</a></li>
+                                <li><a class="dropdown-item" href="create-bounty.php"><i class="fas fa-plus-circle me-2"></i>Post Bounty</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item text-danger" href="logout.php"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
                             </ul>
